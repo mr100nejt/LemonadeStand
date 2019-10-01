@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Class1
+    class hard:Customer//base chance to buy off sad and wet and lower random chance to buy as base 
     {
     }
 }

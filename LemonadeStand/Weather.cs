@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace LemonadeStand
 {
     class Weather
@@ -12,10 +11,14 @@ namespace LemonadeStand
         //acutual weather that day(random numbers that refrence that forcast and edit variables in it.) 
         //tempeture(int)
         //condition(sunny,cloudy,raining)(in a list) 
-        public string tempture; 
+        static  bool wet;
+        static bool cold;
+        static bool sad;
+        public static string tempture; 
         public List<string> condition;
         public List<string> forcast;
-        public string allWeather; 
+        public string allWeather;
+        static public int TempNumber = Int32.Parse(Weather.tempture);
         public Weather()
         {
             Conditions(); 
@@ -42,9 +45,23 @@ namespace LemonadeStand
 
         public string SetWeatherConditions(string temp, int num)
         {
-           allWeather = SetTemp(temp) + condition[num];
+            tempture = SetTemp(temp);
+            allWeather = SetTemp(temp) + condition[num];
             Console.WriteLine(allWeather);
+            if (num == 2)
+            {
+                 wet = true; 
+            }
+            if(num == 1)
+            {
+                sad = true; 
+            }
+            if (TempNumber < 70)
+            {
+                cold = true;
+            }
             return Console.ReadLine(); 
+           
         }
         public void Forcast()
         {
