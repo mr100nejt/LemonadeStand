@@ -16,7 +16,7 @@ namespace LemonadeStand
         static bool sad;
         public static string tempture; 
         public List<string> condition;
-        public List<string> forcast;
+        static public List<string> forcast;
         public string allWeather;
         static public int TempNumber = Int32.Parse(Weather.tempture);
         public Weather()
@@ -66,7 +66,7 @@ namespace LemonadeStand
         public void Forcast()
         {
             forcast = new List<string>() {SetWeatherConditions("70 ",0), SetWeatherConditions("75 ", 0), SetWeatherConditions("65 ", 1), SetWeatherConditions("71 ", 1), SetWeatherConditions("70 ", 0), SetWeatherConditions("80 ", 2), SetWeatherConditions("60 ", 2), SetWeatherConditions("90 ", 2), };
-            forcast.ForEach(Console.WriteLine);
+           
         }
     
     }

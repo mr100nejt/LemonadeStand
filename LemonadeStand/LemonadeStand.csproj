@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="cups.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="Days.cs" />
     <Compile Include="Easy.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="hard.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="items.cs" />
     <Compile Include="lemons.cs" />
     <Compile Include="medium.cs" />
+    <Compile Include="Pitcher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Weather.cs" />

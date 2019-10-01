@@ -21,7 +21,7 @@ namespace LemonadeStand
        
         public void Buy()
         {
-
+            
         }
         
         public abstract void  ChanceToBuy();
