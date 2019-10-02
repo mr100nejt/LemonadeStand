@@ -19,7 +19,7 @@ namespace LemonadeStand
       private Weather weather = new Weather();  
         public Game()
         {
-            Console.WriteLine(weather.forcast);
+            Console.WriteLine(Weather.forcast);
             SetAmmountsForPitchers();
             CreatePitcher();  
         }
@@ -37,7 +37,7 @@ namespace LemonadeStand
         {
             while ((Game.ammountOfSugar < 2) && (Game.ammountOfLemons < 3) && (Game.ammountOfIce < 3))
             {
-                ammountOfPitchers++;  
+                ammountOfPitchers++;  // next step is buying so the weather needs to rotate days to affect customers 
             }
         }
 

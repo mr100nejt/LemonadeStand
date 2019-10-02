@@ -5,28 +5,32 @@ using System.Text;
 using System.Threading.Tasks;
 namespace LemonadeStand
 {
-    class Weather
+    class  Weather
     {
+        //could have been a static class 
         //create 7 day  forcast(in a list)(have a random chance to affect that weather for the acutual day)  
         //acutual weather that day(random numbers that refrence that forcast and edit variables in it.) 
         //tempeture(int)
         //condition(sunny,cloudy,raining)(in a list) 
-        static  bool wet;
-        static bool cold;
-        static bool sad;
+        public static  bool wet = false;
+        public static bool cold = false;
+        public static bool sad = false;
         public static string tempture; 
-        public List<string> condition;
-        static public List<string> forcast;
-        public string allWeather;
-        static public int TempNumber = Int32.Parse(Weather.tempture);
-        public Weather()
+        public static List<string> condition;
+        public static string dailyTemp;
+        public static int dailyTempNumber;
+        public static string dailyCondition;
+        public static List<string> forcast;
+        public static string allWeather;
+        static public int tempNumber = Int32.Parse(Weather.tempture);
+        public  Weather()
         {
             Conditions(); 
-            Forcast(); 
+           
 
         }
 
-        public string SetTemp(string temp)
+        public static string SetTemp(string temp)
         {
 
            return tempture = temp;  
@@ -43,31 +47,43 @@ namespace LemonadeStand
             
         }
 
-        public string SetWeatherConditions(string temp, int num)
+        public static string SetWeatherConditions(string temp, int num)
         {
             tempture = SetTemp(temp);
+            dailyCondition = condition[num];
+            dailyTempNumber = tempNumber + Customer.RandomNumber(1, 11); ;
+            dailyTemp = Convert.ToString(dailyTemp);
             allWeather = SetTemp(temp) + condition[num];
             Console.WriteLine(allWeather);
             if (num == 2)
             {
                  wet = true; 
             }
+           else
+            {
+                wet = false; 
+            }
             if(num == 1)
             {
                 sad = true; 
             }
-            if (TempNumber < 70)
+            else
+            {
+                sad = false; 
+            }
+            if (dailyTempNumber < 70)
             {
                 cold = true;
             }
+            else if(dailyTempNumber >70)
+            {
+                cold = false; 
+            }
+            
             return Console.ReadLine(); 
            
         }
-        public void Forcast()
-        {
-            forcast = new List<string>() {SetWeatherConditions("70 ",0), SetWeatherConditions("75 ", 0), SetWeatherConditions("65 ", 1), SetWeatherConditions("71 ", 1), SetWeatherConditions("70 ", 0), SetWeatherConditions("80 ", 2), SetWeatherConditions("60 ", 2), SetWeatherConditions("90 ", 2), };
-           
-        }
+       
     
     }
 }

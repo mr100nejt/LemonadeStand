@@ -7,13 +7,16 @@ using System.Threading.Tasks;
 namespace LemonadeStand
 {
    abstract class Customer
-    {
+    
+    
+    { 
+        public string name;
         protected int chanceToBuy;
         //likely to buy
         //hesitnt
         //hard to please 
 
-        public int RandomNumber(int num1,int num2)
+        public static int RandomNumber(int num1,int num2)
         {
             Random random = new Random();
             return random.Next(num1,num2);
