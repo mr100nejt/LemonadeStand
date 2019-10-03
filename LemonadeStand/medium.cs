@@ -12,8 +12,12 @@ namespace LemonadeStand
         public medium()
         {
             chanceToBuy = RandomNumber(6, 10);
+            ChanceToBuy();
         }
-
+        public override void Buy()
+        {
+            Console.WriteLine("i bought");
+        }
         public override void ChanceToBuy()
         {
            
@@ -22,9 +26,10 @@ namespace LemonadeStand
                 chanceToBuy = chanceToBuy - 1; 
             }
             
-            if (chanceToBuy < 8)
+            if (chanceToBuy <= 8)
             {
-                Buy();
+                Wallet.money = Wallet.money + Invetory.priceOfCups;
+                Wallet.moneyForTheDay = Wallet.moneyForTheDay + Invetory.priceOfCups;
             }
 
         }
@@ -33,5 +38,5 @@ namespace LemonadeStand
     }
 
 }
-}
+
 // i think change these all to diffrent consturctors on the easy class

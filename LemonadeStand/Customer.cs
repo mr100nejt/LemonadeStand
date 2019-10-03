@@ -22,10 +22,8 @@ namespace LemonadeStand
             return random.Next(num1,num2);
         }
        
-        public void Buy()
-        {
-            
-        }
+        public abstract void Buy();
+       
         
         public abstract void  ChanceToBuy();
        

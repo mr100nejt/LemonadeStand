@@ -13,28 +13,28 @@ namespace LemonadeStand
         {
             SpawnList();
         }
-        public  void SpawnList()
+        public static void SpawnList()
         {
            
                
                 for (int i = 1; i < 33; i++)
                 {
                     string Name = "easyCustomer" + i.ToString();
-                    customers.Add( new Easy() { name = Name });
+                    customerList.Add( new Easy() { name = Name });
                       
                        if(i == 33)
                        {
                             for ( i = 1; i < 33; i++)
                             {
                                 Name = "mediumCustomer" + i.ToString();
-                                customers.Add(new Easy() { name = Name });
+                                customerList.Add(new Easy() { name = Name });
                             }
                                 if (i == 33)
                                 {
                                     for (i = 1; i < 33; i++)
                                     {
                                         Name = "hardCustomer" + i.ToString();
-                                        customers.Add(new Easy() { name = Name });
+                                        customerList.Add(new Easy() { name = Name });
                                     }
                                 }
                        }    

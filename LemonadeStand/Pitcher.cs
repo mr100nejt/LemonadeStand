@@ -8,7 +8,16 @@ namespace LemonadeStand
 {
     class Pitcher
     {
-        public int cups = 15; 
+        public  int cups = 15;
+        public bool full;
+        public string name;
+        public void CheckIfFull()
+        {
+            if(cups == 0)
+            {
+                full = false;  
+            }
+        }
        
         
     

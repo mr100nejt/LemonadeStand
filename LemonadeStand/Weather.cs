@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace LemonadeStand
 {
-    class  Weather
+   class  Weather
     {
         //could have been a static class 
         //create 7 day  forcast(in a list)(have a random chance to affect that weather for the acutual day)  
@@ -15,22 +15,17 @@ namespace LemonadeStand
         public static  bool wet = false;
         public static bool cold = false;
         public static bool sad = false;
-        public static string tempture; 
+        public  string tempture; 
         public static List<string> condition;
         public static string dailyTemp;
         public static int dailyTempNumber;
         public static string dailyCondition;
         public static List<string> forcast;
         public static string allWeather;
-        static public int tempNumber = Int32.Parse(Weather.tempture);
-        public  Weather()
-        {
-            Conditions(); 
-           
+        
+        
 
-        }
-
-        public static string SetTemp(string temp)
+        public string SetTemp(string temp)
         {
 
            return tempture = temp;  
@@ -46,16 +41,22 @@ namespace LemonadeStand
            
             
         }
-
-        public static string SetWeatherConditions(string temp, int num)
+        public void Forcast()
         {
+            forcast = new List<string>() { SetWeatherConditions("70 ", 0), SetWeatherConditions("75 ", 0), SetWeatherConditions("65 ", 1), SetWeatherConditions("71 ", 1), SetWeatherConditions("70 ", 0), SetWeatherConditions("80 ", 2), SetWeatherConditions("60 ", 2), SetWeatherConditions("90 ", 2), };
+            //Weather.forcast.ForEach(Console.ReadLine());
+        }
+        public  string SetWeatherConditions(string temp, int num)
+        {
+            
             tempture = SetTemp(temp);
+            int tempNumber = Int32.Parse(tempture);
             dailyCondition = condition[num];
             dailyTempNumber = tempNumber + Customer.RandomNumber(1, 11); ;
             dailyTemp = Convert.ToString(dailyTemp);
             allWeather = SetTemp(temp) + condition[num];
             Console.WriteLine(allWeather);
-            if (num == 2)
+            if (dailyCondition == "rainy")
             {
                  wet = true; 
             }
@@ -63,7 +64,7 @@ namespace LemonadeStand
             {
                 wet = false; 
             }
-            if(num == 1)
+            if(dailyCondition == "cloudy")
             {
                 sad = true; 
             }

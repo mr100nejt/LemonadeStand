@@ -10,7 +10,7 @@ namespace LemonadeStand
     {
         protected int price;
         protected int quanity;
-        static protected int totalPriceOfItem; 
+        static public int totalPriceOfItem; 
 
         protected abstract void SetPrice();
         protected abstract void SetQuanity(int num); 
