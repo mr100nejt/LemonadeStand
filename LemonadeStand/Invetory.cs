@@ -20,7 +20,7 @@ namespace LemonadeStand
         
         public static void SetAmmountsForPitchers()
         {
-            Console.WriteLine("you have" + Wallet.money + "dollars");
+            Console.WriteLine("you have " + Wallet.money + " dollars");
             Console.WriteLine("how many lemons");
            ammountOfLemons = Int32.Parse(Console.ReadLine());
             Wallet.money = Wallet.money - lemons.totalPriceOfItem * ammountOfLemons;

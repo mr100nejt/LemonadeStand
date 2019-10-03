@@ -12,14 +12,16 @@ namespace LemonadeStand
         //acutual weather that day(random numbers that refrence that forcast and edit variables in it.) 
         //tempeture(int)
         //condition(sunny,cloudy,raining)(in a list) 
-        public static  bool wet = false;
-        public static bool cold = false;
-        public static bool sad = false;
+        public static  bool wet;
+        public static bool cold;
+        public static bool sad;
         public  string tempture; 
         public static List<string> condition;
         public static string dailyTemp;
         public static int dailyTempNumber;
         public static string dailyCondition;
+        public static List<string> dailyConditionList = new List<string>();
+        public static List<int> dailyTempNumberList = new List<int>();
         public static List<string> forcast;
         public static string allWeather;
         
@@ -53,38 +55,47 @@ namespace LemonadeStand
             int tempNumber = Int32.Parse(tempture);
             dailyCondition = condition[num];
             dailyTempNumber = tempNumber + Customer.RandomNumber(1, 11); ;
+            dailyTempNumberList.Add(dailyTempNumber);
+            dailyConditionList.Add(dailyCondition);
             dailyTemp = Convert.ToString(dailyTemp);
+
             allWeather = SetTemp(temp) + condition[num];
             Console.WriteLine(allWeather);
-            if (dailyCondition == "rainy")
-            {
-                 wet = true; 
-            }
-           else
-            {
-                wet = false; 
-            }
-            if(dailyCondition == "cloudy")
-            {
-                sad = true; 
-            }
-            else
-            {
-                sad = false; 
-            }
-            if (dailyTempNumber < 70)
-            {
-                cold = true;
-            }
-            else if(dailyTempNumber >70)
-            {
-                cold = false; 
-            }
+           
             
             return Console.ReadLine(); 
            
         }
-       
+        public static void GetDailyWeather(int num)
+        {
+
+            Console.WriteLine(dailyConditionList[num] + " " + dailyTempNumberList[num]);
+            if (dailyConditionList[num] == "rainy")
+            {
+                wet = true;
+            }
+            else
+            {
+                wet = false;
+            }
+            if (dailyConditionList[num] == "cloudy")
+            {
+                sad = true;
+            }
+            else
+            {
+                sad = false;
+            }
+            if (dailyTempNumberList[num] < 70)
+            {
+                cold = true;
+            }
+            else if (dailyTempNumberList[num] > 70)
+            {
+                cold = false;
+            }
+
+        }
     
     }
 }
