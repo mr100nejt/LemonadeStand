@@ -6,18 +6,14 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class hard : Customer//base chance to buy off sad and wet and lower random chance to buy as base 
+    class hard : Customer
     {
         public hard()
         {
             chanceToBuy = RandomNumber(5, 10);
             ChanceToBuy();
         }
-        public override void Buy()
-        {
-            Console.WriteLine("i bought");
-
-        }
+       
         public override void ChanceToBuy()
         {
 
@@ -29,10 +25,23 @@ namespace LemonadeStand
             {
                 chanceToBuy = chanceToBuy - 1;
             }
-            if (chanceToBuy <= 7)
+            if (chanceToBuy >= 7)
             {
-                Wallet.money = Wallet.money + Invetory.priceOfCups;
-                Wallet.moneyForTheDay = Wallet.moneyForTheDay + Invetory.priceOfCups;
+                if (Invetory.pitcherList.Count > 0)
+                {
+                    buyCounter++;
+                    Wallet.money = Wallet.money + Invetory.priceOfCups;
+                    Wallet.moneyForTheDay = Wallet.moneyForTheDay + Invetory.priceOfCups;
+                    if (buyCounter == 15)
+                    {
+                        Invetory.pitcherList.RemoveAt(0);
+                        buyCounter = 0;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("sold out");
+                }
             }
 
 

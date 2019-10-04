@@ -46,7 +46,29 @@ namespace LemonadeStand
         public void Forcast()
         {
             forcast = new List<string>() { SetWeatherConditions("70 ", 0), SetWeatherConditions("75 ", 0), SetWeatherConditions("65 ", 1), SetWeatherConditions("71 ", 1), SetWeatherConditions("70 ", 0), SetWeatherConditions("80 ", 2), SetWeatherConditions("60 ", 2), SetWeatherConditions("90 ", 2), };
-            //Weather.forcast.ForEach(Console.ReadLine());
+
+            if (Days.dayCounter == 0)
+            {
+                forcast.ForEach(Console.WriteLine);
+            }
+            if (Days.dayCounter > 1)
+            {
+                Console.WriteLine("Would you like to see the forcast?");
+                string input = Console.ReadLine();
+                switch (input)
+                {
+                    case "yes":
+                        forcast.ForEach(Console.WriteLine);
+                        break; 
+                    case "no":
+                        break;
+                    default:
+                        Forcast();
+                        break;
+
+                }
+            }
+                      
         }
         public  string SetWeatherConditions(string temp, int num)
         {
@@ -60,16 +82,15 @@ namespace LemonadeStand
             dailyTemp = Convert.ToString(dailyTemp);
 
             allWeather = SetTemp(temp) + condition[num];
-            Console.WriteLine(allWeather);
-           
+
+            return allWeather; 
             
-            return Console.ReadLine(); 
-           
+            
         }
         public static void GetDailyWeather(int num)
         {
 
-            Console.WriteLine(dailyConditionList[num] + " " + dailyTempNumberList[num]);
+            Console.WriteLine("Your daily weather is " + dailyConditionList[num] + " " + dailyTempNumberList[num]);
             if (dailyConditionList[num] == "rainy")
             {
                 wet = true;

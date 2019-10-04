@@ -9,11 +9,9 @@ namespace LemonadeStand
    abstract class items
     {
         protected int price;
-        protected int quanity;
         static public int totalPriceOfItem; 
-
         protected abstract void SetPrice();
-        protected abstract void SetQuanity(int num); 
+         
     
     
     

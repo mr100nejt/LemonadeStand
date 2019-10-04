@@ -12,19 +12,12 @@ namespace LemonadeStand
     { 
         public string name;
         protected int chanceToBuy;
-        //likely to buy
-        //hesitnt
-        //hard to please 
-
+        public static int buyCounter;
         public static int RandomNumber(int num1,int num2)
         {
             Random random = new Random();
             return random.Next(num1,num2);
         }
-       
-        public abstract void Buy();
-       
-        
         public abstract void  ChanceToBuy();
        
 

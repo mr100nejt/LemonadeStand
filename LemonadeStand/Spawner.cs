@@ -17,21 +17,21 @@ namespace LemonadeStand
         {
            
                
-                for (int i = 1; i < 33; i++)
+                for (int i = 1; i <= 33; i++)
                 {
                     string Name = "easyCustomer" + i.ToString();
                     customerList.Add( new Easy() { name = Name });
                       
                        if(i == 33)
                        {
-                            for ( i = 1; i < 33; i++)
+                            for ( i = 1; i <= 33; i++)
                             {
                                 Name = "mediumCustomer" + i.ToString();
                                 customerList.Add(new Easy() { name = Name });
                             }
                                 if (i == 33)
                                 {
-                                    for (i = 1; i < 33; i++)
+                                    for (i = 1; i <= 33; i++)
                                     {
                                         Name = "hardCustomer" + i.ToString();
                                         customerList.Add(new Easy() { name = Name });

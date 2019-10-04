@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class medium : Customer// change the chance of buy off either sad or wet. slightly lower chance to buy off of spawn(still random). 
+    class medium : Customer
     {
 
         public medium()
@@ -14,10 +14,7 @@ namespace LemonadeStand
             chanceToBuy = RandomNumber(6, 10);
             ChanceToBuy();
         }
-        public override void Buy()
-        {
-            Console.WriteLine("i bought");
-        }
+       
         public override void ChanceToBuy()
         {
            
@@ -26,10 +23,23 @@ namespace LemonadeStand
                 chanceToBuy = chanceToBuy - 1; 
             }
             
-            if (chanceToBuy <= 8)
+            if (chanceToBuy >= 8)
             {
-                Wallet.money = Wallet.money + Invetory.priceOfCups;
-                Wallet.moneyForTheDay = Wallet.moneyForTheDay + Invetory.priceOfCups;
+                if (Invetory.pitcherList.Count > 0)
+                {
+                    buyCounter++;
+                    Wallet.money = Wallet.money + Invetory.priceOfCups;
+                    Wallet.moneyForTheDay = Wallet.moneyForTheDay + Invetory.priceOfCups;
+                    if (buyCounter == 15)
+                    {
+                        Invetory.pitcherList.RemoveAt(0);
+                        buyCounter = 0;
+                    }
+                    else
+                    {
+                        Console.WriteLine("sold out");
+                    }
+                }
             }
 
         }

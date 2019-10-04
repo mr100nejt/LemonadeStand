@@ -21,8 +21,9 @@ namespace LemonadeStand
         public static void SetAmmountsForPitchers()
         {
             Console.WriteLine("you have " + Wallet.money + " dollars");
+            Console.WriteLine("Takes 2 sugar/takes 3 lemons/takes 3 ice cubes");
             Console.WriteLine("how many lemons");
-           ammountOfLemons = Int32.Parse(Console.ReadLine());
+            ammountOfLemons = Int32.Parse(Console.ReadLine());
             Wallet.money = Wallet.money - lemons.totalPriceOfItem * ammountOfLemons;
            
             Console.WriteLine("how much ice");
@@ -39,6 +40,7 @@ namespace LemonadeStand
         }
         public static void CreatePitcher()
         {
+            ammountOfPitchers = 0; 
             while ((ammountOfSugar > 2) && (ammountOfLemons > 3) && (ammountOfIce > 3))
             {
                 ammountOfIce = ammountOfIce - 3;

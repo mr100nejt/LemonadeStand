@@ -8,16 +8,18 @@ namespace LemonadeStand
 {
     class lemons:items
     {
+        public lemons()
+        {
+            SetPrice();
+            totalPriceOfItem = price;
+        }
+        
         protected override void SetPrice()
         {
             price = 1; 
         }
 
-        protected override void SetQuanity(int num)
-        {
-            quanity = num;
-            totalPriceOfItem = price * num; 
-        }
+        
     
     
     

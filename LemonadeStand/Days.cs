@@ -17,8 +17,9 @@ namespace LemonadeStand
             for (int i = 1;i <= 7;  i++)
                 {
                     dayCounter++;
-                Weather.GetDailyWeather(i);
-                
+                   
+                    Weather.GetDailyWeather(i);
+                    weather.Forcast(); 
                     Invetory.SetAmmountsForPitchers();
                     Invetory.CreatePitcher();
                     Spawner.SpawnList(); 

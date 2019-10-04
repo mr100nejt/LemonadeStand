@@ -13,11 +13,7 @@ namespace LemonadeStand
             price = 1;
         }
 
-        protected override void SetQuanity(int num)
-        {
-            quanity = num;
-            totalPriceOfItem = price * num;
-        }
+      
 
 
     }
