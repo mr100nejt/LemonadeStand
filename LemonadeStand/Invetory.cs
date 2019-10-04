@@ -14,8 +14,8 @@ namespace LemonadeStand
         static public int ammountOfPitchers;
         static public int priceOfCups;
         public static List<Pitcher> pitcherList = new List<Pitcher>();
-        public static int totalCupsToSell; 
-
+        public static int totalCupsToSell;
+        public static bool exspensive; 
        
         
         public static void SetAmmountsForPitchers()
@@ -36,7 +36,10 @@ namespace LemonadeStand
            
             Console.WriteLine("how much per cup");
             priceOfCups = Int32.Parse(Console.ReadLine());
-
+            if (priceOfCups > 2)
+            {
+                exspensive = true;
+            }
         }
         public static void CreatePitcher()
         {

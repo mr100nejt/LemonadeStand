@@ -10,7 +10,7 @@ namespace LemonadeStand
     {
         public hard()
         {
-            chanceToBuy = RandomNumber(5, 10);
+            chanceToBuy = RandomNumber(7, 10);
             ChanceToBuy();
         }
        
@@ -22,6 +22,10 @@ namespace LemonadeStand
                 chanceToBuy = chanceToBuy - 1;
             }
             if (Weather.wet == true)
+            {
+                chanceToBuy = chanceToBuy - 1;
+            }
+            if(Invetory.exspensive == true)
             {
                 chanceToBuy = chanceToBuy - 1;
             }
