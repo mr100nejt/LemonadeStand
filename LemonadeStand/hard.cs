@@ -44,6 +44,11 @@ namespace LemonadeStand
                 }
                 else
                 {
+                    if (soldOutCounter >= 1)
+                    {
+                        return;
+                    }
+                    soldOutCounter = soldOutCounter++;
                     Console.WriteLine("sold out");
                 }
             }
