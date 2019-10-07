@@ -23,7 +23,8 @@ namespace LemonadeStand
                     Invetory.SetAmmountsForPitchers();
                     Invetory.CreatePitcher();
                     Spawner.SpawnList(); 
-                    Console.WriteLine(Wallet.moneyForTheDay); 
+                    Console.WriteLine("you made "+ Wallet.moneyForTheDay); 
+
                     
             
                 } 
